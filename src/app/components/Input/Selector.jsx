@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
 
 export const Selector = ({
-  placeholder,
   onSelect,
-  selectOption,
   label,
   focusContent,
   inputData,

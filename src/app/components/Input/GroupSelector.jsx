@@ -1,16 +1,14 @@
-"use client"
 import React, { useState } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import { BiSolidDownArrow } from "react-icons/bi";
 
 export const GroupSelector = ({
-  placeholder,
   onSelect,
-  selectOption,
   label,
   focusContent,
   inputData,
   className,
-  classNameTwo
+  classNameTwo,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState("");
@@ -68,4 +66,16 @@ export const GroupSelector = ({
       </div>
     </div>
   );
+};
+
+// Define PropTypes for the component
+GroupSelector.propTypes = {
+  placeholder: PropTypes.string,
+  onSelect: PropTypes.func,
+  selectOption: PropTypes.any,
+  label: PropTypes.string,
+  focusContent: PropTypes.string,
+  inputData: PropTypes.array,
+  className: PropTypes.string,
+  classNameTwo: PropTypes.string,
 };

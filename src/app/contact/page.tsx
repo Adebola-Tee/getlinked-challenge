@@ -30,10 +30,10 @@ const Contact = () => {
     });
   };
 
-  const onSubmitHandler = (event: any) => {
+  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevent the default form submission
 
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.target as HTMLFormElement);
     const requestData = {
       email: formData.get("email"),
       phone_number: "08133630000",

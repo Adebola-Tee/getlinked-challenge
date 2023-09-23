@@ -1,11 +1,10 @@
 interface eyeIconProps {
-  color?: string;
   className?: string;
   width?: number;
   height?: number;
 }
 
-export const EyeIcon = ({ color, className, width, height }: eyeIconProps) => {
+export const EyeIcon = ({ className, width, height }: eyeIconProps) => {
   return (
     <svg
       width={width}

@@ -1,6 +1,5 @@
-"use client";
-
 import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 export const Modal = ({ show, onClose, children }) => {
   const [isOpen, setIsOpen] = useState(show);
@@ -9,12 +8,6 @@ export const Modal = ({ show, onClose, children }) => {
   const handleClose = () => {
     setIsOpen(false);
     onClose && onClose();
-  };
-
-  const handleClickOutside = (event) => {
-    if (modalRef.current && !modalRef.current.contains(event.target)) {
-      handleClose();
-    }
   };
 
   useEffect(() => {
@@ -31,7 +24,7 @@ export const Modal = ({ show, onClose, children }) => {
           ></div>
           <div
             ref={modalRef}
-            className=" p-3 z-20 md:w-3/5 overflow-y-auto max-h-full"
+            className="p-3 z-20 md:w-3/5 overflow-y-auto max-h-full"
           >
             {children}
           </div>
@@ -39,4 +32,10 @@ export const Modal = ({ show, onClose, children }) => {
       )}
     </>
   );
+};
+
+Modal.propTypes = {
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };

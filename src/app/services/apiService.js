@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const apiResource = (customHeaders = {}) => {
+const apiResource = (process = {}) => {
   const baseURL = process.env.NEXT_PUBLIC_BASEURL;
 
   const service = axios.create({
